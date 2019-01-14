@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    background-color: #1976d2;
+}
+
+.nav-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.nav-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+
+}
+
+.nav-list-menu {
+    list-style-type: none;
+    display: inline;
+}
+
+.nav-list-menu li {
+    display: inline;
+    float: right;
+}
+
+.nav-link-about {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    width: 100%;
+    background-color: #1976d2;
+    position: absolute;
+    bottom: 0px;
+}
+
+.footer-container {
+    width: 80%;
+    color: white;
+    padding: 20px;
+    margin: 0 auto;
+}
