@@ -8,15 +8,18 @@ html, body {
     height: 100%;
 }
 
+/* Header */
+
 header {
     width: 100%;
     background-color: #1976d2;
 }
 
+
 .nav-container {
     width: 80%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .nav-logo {
@@ -40,6 +43,21 @@ header {
     color: white;
     text-decoration: none;
 }
+
+/* Main */
+
+.main-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* About */
+
+.about-title {
+    padding: 20px 0;
+}
+
+/* Footer */
 
 footer {
     width: 100%;
