@@ -8,6 +8,17 @@ html, body {
     height: 100%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+    width: 80%;
+    margin: 0 auto;
+  }
+
 /* Header */
 
 header {
@@ -47,8 +58,37 @@ header {
 /* Main */
 
 .main-container {
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Home Page */
+
+.show-wrapper {
+    /* padding: 0 10px; */
+    width: 31%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.show-title {
+    text-align: center;
+    padding: 15px;
+}
+
+.show-rating {
+    position: relative;
+    left: 180px;
+    bottom: 15px;
+    background-color: #1976d2;
+    padding: 20px;
+    border-radius: 50px;
+    right: 10px;
+}
+
+.show-profile-img {
+    width: 100%;
 }
 
 /* About */
@@ -62,8 +102,9 @@ header {
 footer {
     width: 100%;
     background-color: #1976d2;
-    position: absolute;
+    position: relative;
     bottom: 0px;
+    flex-shrink: 0;
 }
 
 .footer-container {
