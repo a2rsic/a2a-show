@@ -62,13 +62,14 @@ header {
     margin: 30px auto;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 /* Home Page */
 
 .show-wrapper {
-    /* padding: 0 10px; */
     width: 31%;
+    margin-bottom: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

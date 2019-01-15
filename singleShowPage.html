@@ -25,7 +25,7 @@
 
     <main>
         <div class="single-show-container">
-            <section class="single-show-info-section">
+            <!-- <section class="single-show-info-section">
                 <h1 class="single-show-title">Title</h1>
                 <span class="single-show-genre">action</span>
                 <span class="single-show-genre">drama</span>
@@ -37,7 +37,7 @@
             <section class="single-show-img-container">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTez7mpG_Lfb01PnEMjHa4gYPOx7iNTab4KKVnVCdNSGpa1O2RJ"
                     alt="show img" class="single-show-img">
-            </section>
+            </section> -->
 
         </div>
         <section class="single-show-actors-section">
@@ -73,6 +73,11 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module">
+        import { initSingleShowPage } from "./js/controller.js";
+        $(initSingleShowPage)
+    </script>
 </body>
 
 </html>
