@@ -23,15 +23,29 @@ const displayShowCard = (showList) => {
     });
 }
 
+const displayGenre = (show) => {
+    const { genres } = show;
+    let html = "";
+    for (let i = 0; i < genres.length; i++) {
+        const genre = genres[i];
+        html += createGenreSpan(genre);
+    }
+
+    return html;
+}
+
+const createGenreSpan = (genre) => {
+    return (`
+    <span class="single-show-genre">${genre}</span>    
+    `)
+}
+
 const createSingleShowInfo = (show) => {
     return (`
     <section class="single-show-info-section">
         <h1 class="single-show-title">${show.name}</h1>
-        <span class="single-show-genre">${show.genres[0]}</span>
-        <span class="single-show-genre">${show.genres[1]}</span>
-        <span class="single-show-genre">${show.genres[2]}</span>
-
-        <p class="single-show-description">${show.summary}</p>
+        ${displayGenre(show)}
+        <div class="single-show-description">${show.summary}</div>
     </section>
 
     <section class="single-show-img-container">
