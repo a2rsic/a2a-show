@@ -38,6 +38,11 @@ const initSingleShowPage = () => {
             ui.displaySingleShow(show)
         })
 
+    data.getActors(showId)
+        .then(actor => {
+            console.log("ACTOR", actor);
+            ui.displayActors(actor)
+        })
 }
 
 export {

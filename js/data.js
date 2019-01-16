@@ -1,4 +1,5 @@
 import Show from "./entities/Show.js";
+import Actor from "./entities/Actor.js"
 import BASE_URL from "./shared/const.js";
 
 const getShows = () => {
@@ -44,9 +45,25 @@ const getShow = (showId) => {
         })
 }
 
+const getActors = (showId) => {
+    const actorsUrl = `${BASE_URL}/shows/${showId}/cast`;
+
+    return axios.get(actorsUrl)
+        .then(response => response.data)
+        .then(actorsArray => {
+            console.log("my actorsss", actorsArray);
+            const actor = actorsArray.map(actor => {
+                const { id, name, image } = actor.person;
+                return new Actor(id, name, image)
+            })
+            return actor;
+        })
+}
+
 export {
     getShows,
     getShow,
     saveShowId,
-    getShowId
+    getShowId,
+    getActors
 }

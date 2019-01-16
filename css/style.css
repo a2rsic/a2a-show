@@ -84,9 +84,6 @@ header {
 }
 
 .show-rating {
-    /* position: relative;
-    left: 280px;
-    bottom: 15px; */
     background-color: #1976d2;
     padding: 20px;
     border-radius: 50px;
@@ -114,9 +111,11 @@ header {
 }
 
 .single-show-genre {
-    background-color: rgb(207, 203, 203);
+    font-size: 13px;
+    color: rgba(0,0,0,.6);
+    background-color: #e4e4e4;
     border-radius: 20px;
-    padding: 7px;
+    padding: 10px;
 }
 
 .single-show-description {
@@ -129,17 +128,24 @@ header {
 }
 
 .single-show-img {
-    width: 100%;
+    width: 320px;
+    
 }
-
+.single-show-actors-title {
+    font-size: 30px;
+    padding: 20px 0;
+}
 
 .single-show-actors-list {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid rgb(189, 185, 185);
+    margin-bottom: 20px;
+    border-bottom: none;
 }
 
 .single-show-actors-list li {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     list-style-type: none;
     display: inline;
     border-bottom: 1px solid rgb(189, 185, 185);
@@ -150,11 +156,13 @@ header {
 .single-show-actors-list h4 {
     display: inline;
     font-size: 25px;
+    font-weight: 100;
 }
 
 .single-show-actor-img {
     width: 40px;
     height: 40px;
+    border-radius: 20px;
 }
 /* About */
 

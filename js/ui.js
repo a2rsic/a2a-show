@@ -1,5 +1,6 @@
 const $showContainer = $(".main-container");
 const $singleShowContainer = $(".single-show-container");
+const $actorsContainer = $(".single-show-actors-list")
 
 const createShowCard = (show) => {
 
@@ -45,7 +46,28 @@ const displaySingleShow = (show) => {
     $singleShowContainer.append($singleShowInfHtml)
 }
 
+const createActorsList = (actor) => {
+    return (`
+        <li>
+            <img src="${actor.image.medium} "alt="Actor photo" class="single-show-actor-img">
+            <h4 class="actor-name">${actor.name}</h4>
+        </li>
+
+    `)
+}
+
+const displayActors = (actor) => {
+    actor.forEach(actor => {
+        const $actorsListHtml = createActorsList(actor);
+        // $actorsList.append($actorsListHtml);
+        $actorsContainer.append($actorsListHtml)
+    }
+
+    )
+}
+
 export {
     displayShowCard,
-    displaySingleShow
+    displaySingleShow,
+    displayActors
 }
