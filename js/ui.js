@@ -56,6 +56,7 @@ const createSingleShowInfo = (show) => {
 }
 
 const displaySingleShow = (show) => {
+    $(".single-show-container").removeClass("hidden")
     const $singleShowInfHtml = createSingleShowInfo(show);
     $singleShowContainer.append($singleShowInfHtml)
 }
@@ -72,16 +73,21 @@ const createActorsList = (actor) => {
 
 const displayActors = (actor) => {
     actor.forEach(actor => {
+        $(".single-show-actors-section").removeClass("hidden")
         const $actorsListHtml = createActorsList(actor);
-        // $actorsList.append($actorsListHtml);
         $actorsContainer.append($actorsListHtml)
     }
 
     )
 }
 
+const hideLoader = () => {
+    $(".spinner").hide()
+}
+
 export {
     displayShowCard,
     displaySingleShow,
-    displayActors
+    displayActors,
+    hideLoader
 }

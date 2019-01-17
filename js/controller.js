@@ -31,17 +31,22 @@ const onShowClickHandler = (event) => {
 const initSingleShowPage = () => {
     console.log("ready single show page");
 
+
     const showId = data.getShowId()
     data.getShow(showId)
         .then(show => {
             // console.log("my show", show);
+            ui.hideLoader()
             ui.displaySingleShow(show)
         })
 
     data.getActors(showId)
         .then(actor => {
             // console.log("ACTOR", actor);
-            ui.displayActors(actor)
+            ui.hideLoader()
+            ui.displayActors(actor);
+
+            $(".list-grid-icon").on("click")
         })
 }
 
