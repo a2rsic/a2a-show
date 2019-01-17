@@ -36,7 +36,7 @@ const displayGenre = (show) => {
 
 const createGenreSpan = (genre) => {
     return (`
-    <span class="single-show-genre">${genre}</span>    
+    <div class="single-show-genre">${genre}</div>    
     `)
 }
 

@@ -3,7 +3,7 @@ class Show {
         this.id = id;
         this.name = name;
         this.genres = genres;
-        this.rating = rating;
+        this.rating = Number(rating).toFixed(1);
         this.image = image;
         this.summary = summary;
     }

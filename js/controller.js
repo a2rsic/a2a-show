@@ -7,7 +7,7 @@ const initHomePage = () => {
 
     data.getShows()
         .then(showList => {
-            console.log(showList);
+            // console.log(showList);
 
             ui.displayShowCard(showList)
 
@@ -34,13 +34,13 @@ const initSingleShowPage = () => {
     const showId = data.getShowId()
     data.getShow(showId)
         .then(show => {
-            console.log("my show", show);
+            // console.log("my show", show);
             ui.displaySingleShow(show)
         })
 
     data.getActors(showId)
         .then(actor => {
-            console.log("ACTOR", actor);
+            // console.log("ACTOR", actor);
             ui.displayActors(actor)
         })
 }

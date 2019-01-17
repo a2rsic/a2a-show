@@ -19,6 +19,10 @@ body {
     margin: 0 auto;
   }
 
+  .hidden {
+      display: none;
+  }
+
 /* Header */
 
 header {
@@ -76,17 +80,27 @@ header {
 .show-link {
     display: block;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .show-title {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
+    font-size: x-large;
+    font-weight: normal;
 }
 
 .show-rating {
-    background-color: #1976d2;
+    /* width: 56px;
+    height: 56px; */
+    /* position: relative;
+    left: 165px;
+    bottom: 15px; */
+    color: white;
+    background-color: #2196f3;
     padding: 20px;
     border-radius: 50px;
+    z-index: 1;
 }
 
 .show-profile-img {
@@ -96,20 +110,22 @@ header {
 /* Single Show Page */
 
 .single-show-container {
+    width: 100%;
     margin: 30px auto;
     display: flex;
     flex-direction: row-reverse;
-    border-bottom: 1px solid rgb(189, 185, 185);
 }
 
 .single-show-info-section {
+    width: 70%;
     padding: 20px;
 }
 
 .single-show-title {
     padding-bottom: 20px;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: normal;
+    text-transform: uppercase;
 }
 
 .single-show-genre {
@@ -118,6 +134,7 @@ header {
     background-color: #e4e4e4;
     border-radius: 20px;
     padding: 10px;
+    display: inline;
 }
 
 .single-show-description p{
@@ -127,18 +144,20 @@ header {
 }
 
 .single-show-img-container {
+    width: 30%;
     padding: 20px;
     width: 80%;
 }
 
 .single-show-img {
-    width: 320px;
+    width: 100%;
     
 }
 
 .single-show-actors-title {
     font-size: 30px;
     padding: 20px 0;
+    display: inline;
 }
 
 .single-show-actors-list {
@@ -150,7 +169,6 @@ header {
 }
 
 .single-show-actors-list li {
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     list-style-type: none;
     display: inline;
     border-bottom: 1px solid rgb(189, 185, 185);
@@ -162,12 +180,27 @@ header {
     display: inline;
     font-size: 25px;
     font-weight: 100;
+    position: relative;
+    bottom: 15px;
+    left: 20px;
 }
 
 .single-show-actor-img {
+    position: relative;
+    display: inline-block;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.single-show-actors-section div {
+    padding: 30px 0;
+}
+
+.list-grid-icon {
     width: 40px;
-    height: 40px;
-    border-radius: 20px;
+    float: right;
 }
 /* About */
 
@@ -190,4 +223,52 @@ footer {
     color: white;
     padding: 20px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 768px){
+    /* .nav-logo {
+        position: relative;
+        left: 245px;
+    } */
+
+    .single-show-container {
+        flex-direction: column-reverse;
+        margin-left: 70px;
+    }
+
+    .single-show-info-section {
+        width: 100%;
+    }
+
+    .single-show-description {
+        margin-top: 20px;
+        width: 80%;
+    }
+
+    .show-wrapper {
+        text-overflow: ellipsis;
+    }
+/* 
+    .show-rating {
+        position: relative;
+        right: 150px;
+    } */
+}
+
+@media screen and (max-width: 468px){
+    .main {
+        width: 90%;
+    }
+
+    .single-show-container {
+        margin-left: 10px;
+    }
+
+    .single-show-img-container {
+        width: 92%;
+    }
+    .show-wrapper {
+        width: 100%;
+    }
+
 }
