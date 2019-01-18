@@ -1,21 +1,45 @@
 import * as data from "./data.js";
 import * as ui from "./ui.js";
 
+const state = {
+    isGrid: false,
+}
+
 
 const initHomePage = () => {
     console.log("ready home page");
 
     data.getShows()
         .then(showList => {
-            // console.log(showList);
+            // console.log("bu", showList);
 
-            ui.displayShowCard(showList)
+            ui.displayShowCard(showList);
+
+            $(".search-input").on("keyup", onPressEventHandler)
 
             $(".show-wrapper").on("click", onShowClickHandler)
         });
 
 
 }
+
+const onPressEventHandler = (event) => {
+    // console.log("my event", event);
+    const inputValue = event.target.value.toLowerCase();
+    const showField = $(".show-wrapper");
+
+    Array.from(showField).forEach(show => {
+        ui.hideLoader()
+        const showName = show.firstElementChild.textContent;
+        if (showName.toLowerCase().includes(inputValue)) {
+            show.style.display = "block"
+        } else {
+            show.style.display = "none"
+        }
+    })
+
+}
+
 
 const onShowClickHandler = (event) => {
     console.log("my event", event);
@@ -46,7 +70,14 @@ const initSingleShowPage = () => {
             ui.hideLoader()
             ui.displayActors(actor);
 
-            $(".list-grid-icon").on("click")
+            $(".list-grid-icon").on("click", event => {
+                console.log('event', event);
+                if ($(this).hasClass("grid")) {
+                    $(".list").removeClass("list").addClass("grid")
+                } else if ($(this).hasClass("list")) {
+                    $(".list").removeClass("grid").addClass("list")
+                }
+            })
         })
 }
 
