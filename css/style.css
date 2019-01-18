@@ -109,16 +109,15 @@ margin-top: 20px;
 }
 
 .show-rating {
-    /* width: 56px;
-    height: 56px; */
-    /* position: relative;
-    left: 165px;
-    bottom: 15px; */
+    display: inline;
+    position: relative;
+    right: 21px;
+    float: right;
+    bottom: 32px;
     color: white;
     background-color: #2196f3;
     padding: 20px;
     border-radius: 50%;
-    z-index: 1;
 }
 
 .show-profile-img {
@@ -162,14 +161,12 @@ margin-top: 20px;
 }
 
 .single-show-img-container {
-    width: 30%;
     padding: 20px;
-    width: 80%;
+    width: 50%;
 }
 
 .single-show-img {
     width: 100%;
-    
 }
 
 .single-show-actors-title {
@@ -194,7 +191,7 @@ margin-top: 20px;
     
 }
 
-.single-show-actors-list h4 {
+.actor-name {
     display: inline;
     font-size: 25px;
     font-weight: 100;
@@ -227,6 +224,29 @@ margin-top: 20px;
     margin-bottom: 10px;
     padding-bottom: 10px;
   }
+
+.grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.single-show-grid {
+    width: 14%;
+    margin: 10px;
+}
+.single-show-actor-img-grid {
+    width: 100%;
+}
+
+.actor-name-grid {
+    color: #fff;
+    position: relative;
+    bottom: 100px;
+    max-width: 100%;
+    padding: 24px;
+    font-size: 24px;
+}
 
 
 /* About */
@@ -275,6 +295,25 @@ footer {
     .show-wrapper {
         text-overflow: ellipsis;
     }
+
+    .single-show-img-container {
+        width: 80%;
+    }
+
+    .show-title {
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        white-space: nowrap;
+    }
+
+    .single-show-grid {
+        width: 100%;
+    }
+
+    .actor-name-grid {
+        font-size: 34px;
+        font-weight: 300;
+    }
 /* 
     .show-rating {
         position: relative;
@@ -296,6 +335,10 @@ footer {
     }
     .show-wrapper {
         width: 100%;
+    }
+
+    .actor-name {
+        font-size: 20px;
     }
 
 }

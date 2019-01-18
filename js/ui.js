@@ -1,39 +1,40 @@
 const $showContainer = $(".main-container");
 const $singleShowContainer = $(".single-show-container");
 const $actorsContainer = $(".single-show-actors-list");
-const $searchInputValue = $(".search-field");
+// const $searchInputValue = $(".search-field");
+const $actorsGrid = $(".grid");
 
 
-const getSearchValue = () => {
-    const inputValue = $searchInputValue.val();
+// const getSearchValue = () => {
+//     const inputValue = $searchInputValue.val();
 
-    return inputValue;
-}
+//     return inputValue;
+// }
 
-const resetInputValue = () => {
+// const resetInputValue = () => {
 
-    $searchInputValue = ""
-}
+//     $searchInputValue = ""
+// }
 
-const filterShows = (showList) => {
+// const filterShows = (showList) => {
 
-    for (let i = 0; i < showList.length; i++) {
-        if (!showList.filter(show => show.name.includes(getSearchValue()))) {
-            $(this).hide()
-        } else {
-            $(this).show()
-        }
-    }
+//     for (let i = 0; i < showList.length; i++) {
+//         if (!showList.filter(show => show.name.includes(getSearchValue()))) {
+//             $(this).hide()
+//         } else {
+//             $(this).show()
+//         }
+//     }
 
 
-}
+// }
 
 const createShowCard = (show) => {
     return (`
     <div data-show-id="${show.id}" class="show-wrapper">
         <a class="show-link" >
             <img src="${show.image.medium} "alt="photo" class="show-profile-img">
-            <span class="show-rating">${show.rating}</span>
+            <div class="show-rating">${show.rating}</div>
             <h3 class="show-title">${show.name}</h3>
         </a>
     </div>
@@ -61,7 +62,7 @@ const displayGenre = (show) => {
 
 const createGenreSpan = (genre) => {
     return (`
-    <div class="single-show-genre">${genre}</div>    
+        <div class="single-show-genre">${genre}</div> 
     `)
 }
 
@@ -106,16 +107,35 @@ const displayActors = (actor) => {
     )
 }
 
+const createActorsGridView = (actor) => {
+    return (`
+        <div class="single-show-grid">
+            <img src="${actor.image.medium} "alt="Actor photo" class="single-show-actor-img-grid">
+            <h4 class="actor-name-grid">${actor.name}</h4>
+        </div>
+    `)
+}
+
+const displayActorsGrid = (actor) => {
+    actor.forEach(actor => {
+        $(".single-show-actors-section").removeClass("hidden")
+        const $actorGridHtml = createActorsGridView(actor);
+        $actorsGrid.append($actorGridHtml)
+    })
+}
+
 const hideLoader = () => {
     $(".spinner").hide()
 }
+
 
 export {
     displayShowCard,
     displaySingleShow,
     displayActors,
     hideLoader,
+    displayActorsGrid
     // getSearchValue,
-    resetInputValue,
-    filterShows
+    // resetInputValue,
+    // filterShows
 }

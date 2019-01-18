@@ -68,15 +68,24 @@ const initSingleShowPage = () => {
         .then(actor => {
             // console.log("ACTOR", actor);
             ui.hideLoader()
+            // ui.displayActorsGrid(actor)
             ui.displayActors(actor);
 
             $(".list-grid-icon").on("click", event => {
                 console.log('event', event);
-                if ($(this).hasClass("grid")) {
-                    $(".list").removeClass("list").addClass("grid")
-                } else if ($(this).hasClass("list")) {
-                    $(".list").removeClass("grid").addClass("list")
+                $(".list-grid-icon").attr("src", "./images/list-icon.png")
+
+                if (!state.isGrid) {
+                    $(".list").addClass("hidden")
+                    ui.displayActorsGrid(actor)
+
                 }
+                else {
+                    $(".grid").addClass("hidden")
+                    ui.displayActors(actor);
+
+                }
+
             })
         })
 }
