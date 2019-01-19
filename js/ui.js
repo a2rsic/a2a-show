@@ -98,8 +98,12 @@ const createActorsList = (actor) => {
 }
 
 const displayActors = (actor) => {
+    $(".single-show-actors-section").removeClass("hidden")
+
+    $actorsContainer.html("")
+    $actorsGrid.html("")
+
     actor.forEach(actor => {
-        $(".single-show-actors-section").removeClass("hidden")
         const $actorsListHtml = createActorsList(actor);
         $actorsContainer.append($actorsListHtml)
     }
@@ -117,8 +121,12 @@ const createActorsGridView = (actor) => {
 }
 
 const displayActorsGrid = (actor) => {
+    $(".single-show-actors-section").removeClass("hidden");
+
+    $actorsGrid.html("")
+    $actorsContainer.html("")
+
     actor.forEach(actor => {
-        $(".single-show-actors-section").removeClass("hidden")
         const $actorGridHtml = createActorsGridView(actor);
         $actorsGrid.append($actorGridHtml)
     })

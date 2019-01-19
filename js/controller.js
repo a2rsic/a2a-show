@@ -15,28 +15,30 @@ const initHomePage = () => {
 
             ui.displayShowCard(showList);
 
-            $(".search-input").on("keyup", onPressEventHandler)
+            $(".search-input").on("keyup", onSearchShowHandler)
 
             $(".show-wrapper").on("click", onShowClickHandler)
         });
 
 
 }
-
-const onPressEventHandler = (event) => {
+//set state: showList
+//filter show
+//displayShowCard
+const onSearchShowHandler = (event) => {
     // console.log("my event", event);
     const inputValue = event.target.value.toLowerCase();
-    const showField = $(".show-wrapper");
+    // const showField = $(".show-wrapper");
 
-    Array.from(showField).forEach(show => {
-        ui.hideLoader()
-        const showName = show.firstElementChild.textContent;
-        if (showName.toLowerCase().includes(inputValue)) {
-            show.style.display = "block"
-        } else {
-            show.style.display = "none"
-        }
-    })
+    // Array.from(showField).forEach(show => {
+    //     ui.hideLoader()
+    //     const showName = show.firstElementChild.textContent;
+    //     if (showName.toLowerCase().includes(inputValue)) {
+    //         show.style.display = "block"
+    //     } else {
+    //         show.style.display = "none"
+    //     }
+    // })
 
 }
 
@@ -73,17 +75,25 @@ const initSingleShowPage = () => {
 
             $(".list-grid-icon").on("click", event => {
                 console.log('event', event);
-                $(".list-grid-icon").attr("src", "./images/list-icon.png")
 
-                if (!state.isGrid) {
-                    $(".list").addClass("hidden")
-                    ui.displayActorsGrid(actor)
+                const icon = state.isGrid ?
+                    "./images/grid-icon2.png" :
+                    "./images/list-icon.png";
 
-                }
-                else {
+                $(".list-grid-icon").attr("src", icon)
 
-                    $(".grid").addClass("hidden")
+                if (state.isGrid) {
+
+                    // Change to list 
+
                     ui.displayActors(actor);
+                    state.isGrid = false;
+                } else {
+
+                    // Change to grid
+
+                    ui.displayActorsGrid(actor);
+                    state.isGrid = true;
 
                 }
 
