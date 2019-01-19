@@ -81,6 +81,7 @@ const initSingleShowPage = () => {
 
                 }
                 else {
+
                     $(".grid").addClass("hidden")
                     ui.displayActors(actor);
 
