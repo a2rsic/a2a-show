@@ -3,6 +3,7 @@ import * as ui from "./ui.js";
 
 const state = {
     isGrid: false,
+    showList: []
 }
 
 
@@ -11,9 +12,11 @@ const initHomePage = () => {
 
     data.getShows()
         .then(showList => {
-            // console.log("bu", showList);
 
+            state.showList = showList;
+            // console.log("bu", state.showList);
             ui.displayShowCard(showList);
+
 
             $(".search-input").on("keyup", onSearchShowHandler)
 
@@ -26,20 +29,14 @@ const initHomePage = () => {
 //filter show
 //displayShowCard
 const onSearchShowHandler = (event) => {
-    // console.log("my event", event);
     const inputValue = event.target.value.toLowerCase();
-    // const showField = $(".show-wrapper");
 
-    // Array.from(showField).forEach(show => {
-    //     ui.hideLoader()
-    //     const showName = show.firstElementChild.textContent;
-    //     if (showName.toLowerCase().includes(inputValue)) {
-    //         show.style.display = "block"
-    //     } else {
-    //         show.style.display = "none"
-    //     }
-    // })
+    const filterShow = state.showList.filter(show => {
+        const showName = show.name.toLowerCase();
+        return showName.includes(inputValue)
+    })
 
+    ui.displayShowCard(filterShow)
 }
 
 
@@ -70,7 +67,6 @@ const initSingleShowPage = () => {
         .then(actor => {
             // console.log("ACTOR", actor);
             ui.hideLoader()
-            // ui.displayActorsGrid(actor)
             ui.displayActors(actor);
 
             $(".list-grid-icon").on("click", event => {

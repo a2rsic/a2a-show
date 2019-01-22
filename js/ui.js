@@ -1,33 +1,9 @@
 const $showContainer = $(".main-container");
 const $singleShowContainer = $(".single-show-container");
 const $actorsContainer = $(".single-show-actors-list");
-// const $searchInputValue = $(".search-field");
 const $actorsGrid = $(".grid");
 
 
-// const getSearchValue = () => {
-//     const inputValue = $searchInputValue.val();
-
-//     return inputValue;
-// }
-
-// const resetInputValue = () => {
-
-//     $searchInputValue = ""
-// }
-
-// const filterShows = (showList) => {
-
-//     for (let i = 0; i < showList.length; i++) {
-//         if (!showList.filter(show => show.name.includes(getSearchValue()))) {
-//             $(this).hide()
-//         } else {
-//             $(this).show()
-//         }
-//     }
-
-
-// }
 
 const createShowCard = (show) => {
     return (`
@@ -41,7 +17,9 @@ const createShowCard = (show) => {
 `)
 }
 
+
 const displayShowCard = (showList) => {
+    $showContainer.html("")
     showList.forEach(show => {
         const $showCardHtml = createShowCard(show);
         $showContainer.append($showCardHtml);
@@ -142,8 +120,5 @@ export {
     displaySingleShow,
     displayActors,
     hideLoader,
-    displayActorsGrid
-    // getSearchValue,
-    // resetInputValue,
-    // filterShows
+    displayActorsGrid,
 }

@@ -72,7 +72,7 @@ header {
 /* Home Page */
 
 .search-field {
-margin-top: 20px;
+    margin-top: 20px;
 }
 
 .search-img {
@@ -88,6 +88,11 @@ margin-top: 20px;
     outline: none;
     
 }
+/* 
+.search {
+    text-align: center;
+    font-size: 25px;
+} */
 
 .show-wrapper {
     width: 31%;
