@@ -37,7 +37,6 @@ const getShow = (showId) => {
 
     return axios.get(showUrl)
         .then(response => {
-            console.log("show response", response);
             return response.data;
         })
         .then(myShow => {
@@ -51,7 +50,6 @@ const getActors = (showId) => {
     return axios.get(actorsUrl)
         .then(response => response.data)
         .then(actorsArray => {
-            console.log("my actorsss", actorsArray);
             const actor = actorsArray.map(actor => {
                 const { id, name, image } = actor.person;
                 return new Actor(id, name, image)
