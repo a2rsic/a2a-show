@@ -1,3 +1,3 @@
-const BASE_URL = " http://api.tvmaze.com";
+const BASE_URL = " https://api.tvmaze.com";
 
 export default BASE_URL;
